@@ -1,33 +1,61 @@
-const themeToggle = document.querySelector('.theme-switch__checkbox');
-const navbar = document.querySelector('.navbar');
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.querySelector('.theme-switch__checkbox');
+  const navbar = document.querySelector('.navbar');
 
-// Sayfa yüklendiğinde temayı kontrol et
-window.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    themeToggle.checked = true;
-    enableDarkMode();
-  }
-});
+  // Mobil mi kontrol et (örnek: 768px altı mobil)
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-// Tema geçiş fonksiyonları
-function enableDarkMode() {
-  navbar.classList.add('navbar-darkmode');
-  navbar.classList.remove('navbar-white');
-  localStorage.setItem('theme', 'dark');
-}
+  if (isMobile) {
+    // Mobilde: Toggle'ı gizle (CSS ile de gizleyebilirsin), 
+    // Temayı sistem tercihine göre ayarla, localStorage'ı dikkate alma
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-function enableLightMode() {
-  navbar.classList.remove('navbar-darkmode');
-  navbar.classList.add('navbar-white');
-  localStorage.setItem('theme', 'light');
-}
+    if (prefersDark) {
+      document.body.classList.add("dark-theme");
+      navbar.classList.add("navbar-darkmode");
+      navbar.classList.remove("navbar-white");
+    } else {
+      document.body.classList.remove("dark-theme");
+      navbar.classList.remove("navbar-darkmode");
+      navbar.classList.add("navbar-white");
+    }
 
-// Değişiklik olduğunda uygula
-themeToggle.addEventListener('change', () => {
-  if (themeToggle.checked) {
-    enableDarkMode();
+    if (themeToggle) {
+      themeToggle.style.display = "none"; // toggle gizle
+    }
+
   } else {
-    enableLightMode();
+    // Masaüstü: localStorage'tan tema oku ve uygula
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-theme");
+      navbar.classList.add("navbar-darkmode");
+      navbar.classList.remove("navbar-white");
+      if (themeToggle) themeToggle.checked = true;
+    } else {
+      document.body.classList.remove("dark-theme");
+      navbar.classList.remove("navbar-darkmode");
+      navbar.classList.add("navbar-white");
+      if (themeToggle) themeToggle.checked = false;
+    }
+
+    // Toggle varsa değişiklik olayını ayarla
+    if (themeToggle) {
+      themeToggle.style.display = "inline-block"; // toggle görünür
+      themeToggle.addEventListener("change", () => {
+        if (themeToggle.checked) {
+          document.body.classList.add("dark-theme");
+          navbar.classList.add("navbar-darkmode");
+          navbar.classList.remove("navbar-white");
+          localStorage.setItem("theme", "dark");
+        } else {
+          document.body.classList.remove("dark-theme");
+          navbar.classList.remove("navbar-darkmode");
+          navbar.classList.add("navbar-white");
+          localStorage.setItem("theme", "light");
+        }
+      });
+    }
   }
 });

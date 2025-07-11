@@ -1,0 +1,22 @@
+/* KARANLIK TEMA */
+body.dark-theme {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+body.dark-theme .hero-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+}
+
+body.dark-theme .btn-illetisim {
+  background: transparent;
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+body.dark-theme .btn-illetisim:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+

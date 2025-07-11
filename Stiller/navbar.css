@@ -1,22 +1,20 @@
-/* Tema: Açık */
+
 .navbar-white {
-  background-color: rgba(230, 227, 225, 0.85);
+  background: linear-gradient(135deg, #f8fafc, #e0f2fe); 
     backdrop-filter: blur(8px);  
       -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   color: #333;
 }
 
-/* Tema: Koyu */
 .navbar-darkmode {
-  background-color: rgba(1, 3, 14, 0.85);
+  background: linear-gradient(135deg, #0f172a, #1e293b);
     backdrop-filter: blur(8px);  
       -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   color: white;
 }
 
-/* Menü yazıları için */
 .navbar-darkmode .menu-n,
 .navbar-darkmode .gradient-logo {
   color: white;
@@ -39,7 +37,7 @@
     font-weight: bold;  
 }
 
-/* İletişim Butonu */ 
+
 .button-i {
   padding: 10px 30px;
   border-radius: 50px;
@@ -286,3 +284,20 @@
   width: 3rem;
 }
 
+/* Mobilde (örneğin max 768px) toggle gizle */
+@media (max-width: 768px) {
+  .theme-switch {
+    display: none;
+  }
+}
+
+
+.theme-switch__checkbox {
+  position: absolute; /* toggle içinden çıkar */
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none; /* fare etkileşimini engelle */
+  overflow: hidden;
+  z-index: -1; /* en arkaya gönder */
+}
