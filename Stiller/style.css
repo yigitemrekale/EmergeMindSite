@@ -1,0 +1,146 @@
+
+
+/* KARANLIK TEMA */
+body.dark-theme {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+body.dark-theme .hero-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+}
+
+body.dark-theme .btn-illetisim {
+  background: transparent;
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+body.dark-theme .btn-illetisim:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.hero-section {
+  padding: 100px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f8fafc, #e0f2fe);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-theme .hero-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.hero-buttons .btn-custom {
+  padding: 12px 28px;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  margin-right: 15px;
+}
+
+.btn-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(93, 24, 220, 0.3);
+}
+
+.btn-lightmode {
+  background-color: #5d18dc;
+  color: #fff;
+  border: none;
+}
+
+.btn-lightmode:hover {
+  background-color: #2e0974;
+}
+
+.btn-outline-lightmode {
+  background-color: transparent;
+  color: #5d18dc;
+  border: 2px solid #5d18dc;
+}
+
+.btn-outline-lightmode:hover {
+  background-color: #5d18dc;
+  color: #fff;
+}
+
+body.dark-theme .btn-outline-lightmode {
+  color: #93c5fd;
+  border-color: #93c5fd;
+}
+
+body.dark-theme .btn-outline-lightmode:hover {
+  background-color: #93c5fd;
+  color: #1e293b;
+}
+
+#hizmetlerimiz {
+  background: linear-gradient(135deg, #f8fafc, #e0f2fe) !important;
+  color: #1e293b !important;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-theme #hizmetlerimiz {
+  background: #0f172a !important;
+  color: #e0e7ff !important;
+}
+
+/* Hizmetler Bölümü Kartları Açık Tema */
+#hizmetlerimiz .card {
+  background-color: #f8fafc !important; /* Açık tema arka plan */
+  color: #1e293b !important; /* Koyu metin */
+  border: none !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+  border-radius: 1rem !important;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Karanlık Tema */
+body.dark-theme #hizmetlerimiz .card {
+  background-color: #1e293b !important; /* koyu arka plan */
+  color: #e0e7ff !important; /* açık metin */
+  box-shadow: 0 4px 12px rgba(93,24,220,0.3) !important;
+}
+
+/* Linkler */
+#hizmetlerimiz .card a {
+  color: inherit !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#hizmetlerimiz .card a:hover {
+  text-decoration: underline;
+}
+
+body.dark-theme #hizmetlerimiz .card a {
+  color: #93c5fd !important;
+}
+
+body.dark-theme #hizmetlerimiz .card a:hover {
+  color: #bfdbfe !important;
+}
+
+.koyu-tema-yazi {
+  color: #6c757d;
+}
+
+body.dark-theme .koyu-tema-yazi {
+  color: #f1f5f9 !important;
+}
