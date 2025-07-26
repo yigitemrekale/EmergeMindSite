@@ -86,3 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.querySelector('#themeToggle').addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+});
