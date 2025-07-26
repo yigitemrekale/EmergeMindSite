@@ -22,11 +22,13 @@ footer {
 }
 
 
-footer.darkmode {
+/* ✅ Karanlık tema sadece body class’ı ile kontrol ediliyor */
+body.dark-theme footer {
   background: linear-gradient(135deg, #0f172a, #1e293b);
   box-shadow: 0 -2px 8px rgba(0,0,0,0.8);
   color: white;
 }
+
 
 
 footer p {
