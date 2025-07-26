@@ -90,16 +90,33 @@ body.dark-theme .btn-outline-lightmode:hover {
   color: #1e293b;
 }
 
+
+
+/* Giriş yapınca bu class eklenecek ve görünür olacak */
+#hizmetlerimiz.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
 #hizmetlerimiz {
+  padding-top: 80px;    /* Yukarıdan boşluk */
+  padding-bottom: 80px; /* Aşağıdan boşluk */
   background: linear-gradient(135deg, #f8fafc, #e0f2fe) !important;
   color: #1e293b !important;
-  transition: background-color 0.4s ease, color 0.4s ease;
+    transform: translateX(-100px);
+  opacity: 0;
+
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 body.dark-theme #hizmetlerimiz {
+  padding-top: 80px;    /* Karanlık temada da aynı boşluk */
+  padding-bottom: 80px;
   background: #0f172a !important;
   color: #e0e7ff !important;
 }
+
 
 /* Hizmetler Bölümü Kartları Açık Tema */
 #hizmetlerimiz .card {

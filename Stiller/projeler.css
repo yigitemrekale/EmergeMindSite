@@ -1,3 +1,15 @@
+
+#projeler {
+  background: linear-gradient(135deg, #f8fafc, #e0f2fe);
+  color: #1e293b;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-theme #projeler {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+}
+
 @layer demo {
   #projeler .carousel {
     --items: 6;
@@ -64,6 +76,8 @@
     color: #e0e7ff;
     box-shadow: 0 4px 12px rgba(93, 24, 220, 0.3);
   }
+
+  
 
   #projeler .carousel > article:nth-child(1) { --i: 0; }
   #projeler .carousel > article:nth-child(2) { --i: 1; }
@@ -138,4 +152,58 @@
   100% {
     transform: translateX(calc((var(--items) * (var(--carousel-item-width) + var(--carousel-item-gap))) * -1));
   }
+}
+
+
+.proje-btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5d18dc; /* açık mod metin rengi */
+  border: 2px solid #5d18dc;
+  border-radius: 30px;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* hover efekt */
+.proje-btn::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 100%;
+  background-color: #5d18dc;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.proje-btn:hover,
+.proje-btn:focus {
+  color: white;
+  border-color: #5d18dc;
+}
+
+.proje-btn:hover::before,
+.proje-btn:focus::before {
+  width: 110%;
+}
+
+/* Koyu tema için */
+body.dark-theme .proje-btn {
+  color: #f0f0f0; /* açık mavi daha parlak */
+  border-color: #5d18dc;
+}
+
+body.dark-theme .proje-btn::before {
+  background-color: #5d18dc;
 }
